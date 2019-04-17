@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.SysBookmarksDao">
+  <resultMap id="BaseResultMap" type="com.entity.SysBookmarksEntity">
+    <id column="id" jdbcType="DECIMAL" property="id" />
+    <result column="user_id" jdbcType="DECIMAL" property="userId" />
+    <result column="type" jdbcType="DECIMAL" property="type" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, type, topic
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_bookmarks
+    where id = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+    delete from sys_bookmarks
+    where id = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.SysBookmarksEntity">
+    insert into sys_bookmarks (id, user_id, type, 
+      topic)
+    values (#{id,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{type,jdbcType=DECIMAL}, 
+      #{topic,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.SysBookmarksEntity">
+    insert into sys_bookmarks
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="topic != null">
+        topic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.SysBookmarksEntity">
+    update sys_bookmarks
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.SysBookmarksEntity">
+    update sys_bookmarks
+    set user_id = #{userId,jdbcType=DECIMAL},
+      type = #{type,jdbcType=DECIMAL},
+      topic = #{topic,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.SysUserInfoDao">
+  <resultMap id="BaseResultMap" type="com.entity.SysUserInfoEntity">
+    <id column="id" jdbcType="DECIMAL" property="id" />
+    <result column="user_id" jdbcType="DECIMAL" property="userId" />
+    <result column="sex" jdbcType="DECIMAL" property="sex" />
+    <result column="age" jdbcType="DECIMAL" property="age" />
+    <result column="hobby" jdbcType="VARCHAR" property="hobby" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, sex, age, hobby
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user_info
+    where id = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+    delete from sys_user_info
+    where id = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.SysUserInfoEntity">
+    insert into sys_user_info (id, user_id, sex, 
+      age, hobby)
+    values (#{id,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{sex,jdbcType=DECIMAL}, 
+      #{age,jdbcType=DECIMAL}, #{hobby,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.SysUserInfoEntity">
+    insert into sys_user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="hobby != null">
+        hobby,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=DECIMAL},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=DECIMAL},
+      </if>
+      <if test="hobby != null">
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.SysUserInfoEntity">
+    update sys_user_info
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=DECIMAL},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=DECIMAL},
+      </if>
+      <if test="hobby != null">
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.SysUserInfoEntity">
+    update sys_user_info
+    set user_id = #{userId,jdbcType=DECIMAL},
+      sex = #{sex,jdbcType=DECIMAL},
+      age = #{age,jdbcType=DECIMAL},
+      hobby = #{hobby,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
