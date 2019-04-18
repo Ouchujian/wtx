@@ -1,35 +1,33 @@
 package com.entity;
 
-import java.math.BigDecimal;
-
 public class VoteActivityEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal voteId;
+    private Long voteId;
 
-    private BigDecimal activityId;
+    private Long activityId;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getVoteId() {
+    public Long getVoteId() {
         return voteId;
     }
 
-    public void setVoteId(BigDecimal voteId) {
+    public void setVoteId(Long voteId) {
         this.voteId = voteId;
     }
 
-    public BigDecimal getActivityId() {
+    public Long getActivityId() {
         return activityId;
     }
 
-    public void setActivityId(BigDecimal activityId) {
+    public void setActivityId(Long activityId) {
         this.activityId = activityId;
     }
 }

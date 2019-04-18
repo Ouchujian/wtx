@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.SysBookmarksEntity;
-import java.math.BigDecimal;
 
 public interface SysBookmarksDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(SysBookmarksEntity record);
 
     int insertSelective(SysBookmarksEntity record);
 
-    SysBookmarksEntity selectByPrimaryKey(BigDecimal id);
+    SysBookmarksEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(SysBookmarksEntity record);
 

@@ -1,36 +1,35 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class CustomEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal userId;
+    private Long userId;
 
     private String titile;
 
     private String content;
 
-    private Short status;
+    private Byte status;
 
     private Date createDate;
 
     private Date updateDate;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -50,11 +49,11 @@ public class CustomEntity {
         this.content = content == null ? null : content.trim();
     }
 
-    public Short getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

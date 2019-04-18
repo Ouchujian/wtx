@@ -1,12 +1,11 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class CustomJoinEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal userId;
+    private Long userId;
 
     private String content;
 
@@ -14,23 +13,23 @@ public class CustomJoinEntity {
 
     private Date updateDate;
 
-    private BigDecimal customId;
+    private Long customId;
 
-    private BigDecimal roleId;
+    private Long roleId;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -58,19 +57,19 @@ public class CustomJoinEntity {
         this.updateDate = updateDate;
     }
 
-    public BigDecimal getCustomId() {
+    public Long getCustomId() {
         return customId;
     }
 
-    public void setCustomId(BigDecimal customId) {
+    public void setCustomId(Long customId) {
         this.customId = customId;
     }
 
-    public BigDecimal getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(BigDecimal roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 }

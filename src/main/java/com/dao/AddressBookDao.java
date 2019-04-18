@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.AddressBookEntity;
-import java.math.BigDecimal;
 
 public interface AddressBookDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(AddressBookEntity record);
 
     int insertSelective(AddressBookEntity record);
 
-    AddressBookEntity selectByPrimaryKey(BigDecimal id);
+    AddressBookEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(AddressBookEntity record);
 

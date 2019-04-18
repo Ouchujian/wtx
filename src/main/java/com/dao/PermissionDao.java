@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.SysPermissionEntity;
-import java.math.BigDecimal;
 
 public interface PermissionDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(SysPermissionEntity record);
 
     int insertSelective(SysPermissionEntity record);
 
-    SysPermissionEntity selectByPrimaryKey(BigDecimal id);
+    SysPermissionEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(SysPermissionEntity record);
 

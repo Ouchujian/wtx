@@ -1,37 +1,35 @@
 package com.entity;
 
-import java.math.BigDecimal;
-
 public class SysBookmarksEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal userId;
+    private Long userId;
 
-    private Integer type;
+    private Long type;
 
     private String topic;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Integer getType() {
+    public Long getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(Long type) {
         this.type = type;
     }
 

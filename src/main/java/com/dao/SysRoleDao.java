@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.SysRoleEntity;
-import java.math.BigDecimal;
 
 public interface SysRoleDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(SysRoleEntity record);
 
     int insertSelective(SysRoleEntity record);
 
-    SysRoleEntity selectByPrimaryKey(BigDecimal id);
+    SysRoleEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(SysRoleEntity record);
 

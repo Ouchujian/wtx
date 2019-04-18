@@ -2,38 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.AddressBookJoinDao">
   <resultMap id="BaseResultMap" type="com.entity.AddressBookJoinEntity">
-    <id column="id" jdbcType="DECIMAL" property="id" />
-    <result column="address_boot_id" jdbcType="DECIMAL" property="addressBootId" />
-    <result column="user_id" jdbcType="DECIMAL" property="userId" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="address_boot_id" jdbcType="BIGINT" property="addressBootId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_mobile" jdbcType="VARCHAR" property="userMobile" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="role_id" jdbcType="DECIMAL" property="roleId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, address_boot_id, user_id, user_name, user_mobile, create_date, update_date, remark, 
     role_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_address_book_join
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_address_book_join
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.entity.AddressBookJoinEntity">
     insert into t_address_book_join (id, address_boot_id, user_id, 
       user_name, user_mobile, create_date, 
       update_date, remark, role_id
       )
-    values (#{id,jdbcType=DECIMAL}, #{addressBootId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, 
+    values (#{id,jdbcType=BIGINT}, #{addressBootId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
       #{userName,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{updateDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{roleId,jdbcType=DECIMAL}
+      #{updateDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{roleId,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.entity.AddressBookJoinEntity">
@@ -69,13 +69,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=DECIMAL},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="addressBootId != null">
-        #{addressBootId,jdbcType=DECIMAL},
+        #{addressBootId,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
@@ -93,7 +93,7 @@
         #{remark,jdbcType=VARCHAR},
       </if>
       <if test="roleId != null">
-        #{roleId,jdbcType=DECIMAL},
+        #{roleId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -101,10 +101,10 @@
     update t_address_book_join
     <set>
       <if test="addressBootId != null">
-        address_boot_id = #{addressBootId,jdbcType=DECIMAL},
+        address_boot_id = #{addressBootId,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        user_id = #{userId,jdbcType=DECIMAL},
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
@@ -122,21 +122,21 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="roleId != null">
-        role_id = #{roleId,jdbcType=DECIMAL},
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
     </set>
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.AddressBookJoinEntity">
     update t_address_book_join
-    set address_boot_id = #{addressBootId,jdbcType=DECIMAL},
-      user_id = #{userId,jdbcType=DECIMAL},
+    set address_boot_id = #{addressBootId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
       user_name = #{userName,jdbcType=VARCHAR},
       user_mobile = #{userMobile,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       update_date = #{updateDate,jdbcType=TIMESTAMP},
       remark = #{remark,jdbcType=VARCHAR},
-      role_id = #{roleId,jdbcType=DECIMAL}
-    where id = #{id,jdbcType=DECIMAL}
+      role_id = #{roleId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

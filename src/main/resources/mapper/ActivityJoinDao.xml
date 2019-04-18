@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.ActivityJoinDao">
   <resultMap id="BaseResultMap" type="com.entity.ActivityJoinEntity">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="activity_id" jdbcType="DECIMAL" property="activityId" />
-    <result column="user_id" jdbcType="DECIMAL" property="userId" />
-    <result column="role_id" jdbcType="DECIMAL" property="roleId" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="activity_id" jdbcType="BIGINT" property="activityId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
-    <result column="status" jdbcType="DECIMAL" property="status" />
+    <result column="status" jdbcType="TINYINT" property="status" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_mobile" jdbcType="VARCHAR" property="userMobile" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
@@ -17,24 +17,24 @@
     id, activity_id, user_id, role_id, create_date, update_date, status, user_name, user_mobile, 
     remark
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_activity_join
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_activity_join
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.entity.ActivityJoinEntity">
     insert into t_activity_join (id, activity_id, user_id, 
       role_id, create_date, update_date, 
       status, user_name, user_mobile, 
       remark)
-    values (#{id,jdbcType=INTEGER}, #{activityId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, 
-      #{roleId,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, 
-      #{status,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{activityId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{roleId,jdbcType=BIGINT}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=TINYINT}, #{userName,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.ActivityJoinEntity">
@@ -73,16 +73,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="activityId != null">
-        #{activityId,jdbcType=DECIMAL},
+        #{activityId,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="roleId != null">
-        #{roleId,jdbcType=DECIMAL},
+        #{roleId,jdbcType=BIGINT},
       </if>
       <if test="createDate != null">
         #{createDate,jdbcType=TIMESTAMP},
@@ -91,7 +91,7 @@
         #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="status != null">
-        #{status,jdbcType=DECIMAL},
+        #{status,jdbcType=TINYINT},
       </if>
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
@@ -108,13 +108,13 @@
     update t_activity_join
     <set>
       <if test="activityId != null">
-        activity_id = #{activityId,jdbcType=DECIMAL},
+        activity_id = #{activityId,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        user_id = #{userId,jdbcType=DECIMAL},
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="roleId != null">
-        role_id = #{roleId,jdbcType=DECIMAL},
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
       <if test="createDate != null">
         create_date = #{createDate,jdbcType=TIMESTAMP},
@@ -123,7 +123,7 @@
         update_date = #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=DECIMAL},
+        status = #{status,jdbcType=TINYINT},
       </if>
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
@@ -135,19 +135,19 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.ActivityJoinEntity">
     update t_activity_join
-    set activity_id = #{activityId,jdbcType=DECIMAL},
-      user_id = #{userId,jdbcType=DECIMAL},
-      role_id = #{roleId,jdbcType=DECIMAL},
+    set activity_id = #{activityId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       update_date = #{updateDate,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=DECIMAL},
+      status = #{status,jdbcType=TINYINT},
       user_name = #{userName,jdbcType=VARCHAR},
       user_mobile = #{userMobile,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

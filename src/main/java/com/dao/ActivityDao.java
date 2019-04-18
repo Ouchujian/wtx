@@ -1,18 +1,22 @@
 package com.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.entity.ActivityEntity;
-import java.math.BigDecimal;
 
 public interface ActivityDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(ActivityEntity record);
 
     int insertSelective(ActivityEntity record);
 
-    ActivityEntity selectByPrimaryKey(BigDecimal id);
+    ActivityEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(ActivityEntity record);
 
     int updateByPrimaryKey(ActivityEntity record);
+    
+    List<ActivityEntity> queryList(Map<String,Object> params);
 }

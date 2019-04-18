@@ -1,14 +1,13 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class AddressBookJoinEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal addressBootId;
+    private Long addressBootId;
 
-    private BigDecimal userId;
+    private Long userId;
 
     private String userName;
 
@@ -20,29 +19,29 @@ public class AddressBookJoinEntity {
 
     private String remark;
 
-    private BigDecimal roleId;
+    private Long roleId;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getAddressBootId() {
+    public Long getAddressBootId() {
         return addressBootId;
     }
 
-    public void setAddressBootId(BigDecimal addressBootId) {
+    public void setAddressBootId(Long addressBootId) {
         this.addressBootId = addressBootId;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -86,11 +85,11 @@ public class AddressBookJoinEntity {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public BigDecimal getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(BigDecimal roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 }

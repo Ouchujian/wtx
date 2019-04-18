@@ -1,22 +1,21 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class ActivityJoinEntity {
-    private Integer id;
+    private Long id;
 
-    private BigDecimal activityId;
+    private Long activityId;
 
-    private BigDecimal userId;
+    private Long userId;
 
-    private BigDecimal roleId;
+    private Long roleId;
 
     private Date createDate;
 
     private Date updateDate;
 
-    private Short status;
+    private Byte status;
 
     private String userName;
 
@@ -24,35 +23,35 @@ public class ActivityJoinEntity {
 
     private String remark;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getActivityId() {
+    public Long getActivityId() {
         return activityId;
     }
 
-    public void setActivityId(BigDecimal activityId) {
+    public void setActivityId(Long activityId) {
         this.activityId = activityId;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public BigDecimal getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(BigDecimal roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 
@@ -72,11 +71,11 @@ public class ActivityJoinEntity {
         this.updateDate = updateDate;
     }
 
-    public Short getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

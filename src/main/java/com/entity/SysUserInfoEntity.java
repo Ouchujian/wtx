@@ -1,47 +1,45 @@
 package com.entity;
 
-import java.math.BigDecimal;
-
 public class SysUserInfoEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal userId;
+    private Long userId;
 
-    private Short sex;
+    private Boolean sex;
 
-    private Short age;
+    private Byte age;
 
     private String hobby;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Short getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(Short sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 
-    public Short getAge() {
+    public Byte getAge() {
         return age;
     }
 
-    public void setAge(Short age) {
+    public void setAge(Byte age) {
         this.age = age;
     }
 

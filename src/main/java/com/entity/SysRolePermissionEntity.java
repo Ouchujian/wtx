@@ -1,35 +1,33 @@
 package com.entity;
 
-import java.math.BigDecimal;
-
 public class SysRolePermissionEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal roleId;
+    private Long roleId;
 
-    private BigDecimal permissionId;
+    private Long permissionId;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(BigDecimal roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 
-    public BigDecimal getPermissionId() {
+    public Long getPermissionId() {
         return permissionId;
     }
 
-    public void setPermissionId(BigDecimal permissionId) {
+    public void setPermissionId(Long permissionId) {
         this.permissionId = permissionId;
     }
 }

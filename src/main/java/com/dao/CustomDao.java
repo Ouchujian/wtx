@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.CustomEntity;
-import java.math.BigDecimal;
 
 public interface CustomDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(CustomEntity record);
 
     int insertSelective(CustomEntity record);
 
-    CustomEntity selectByPrimaryKey(BigDecimal id);
+    CustomEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(CustomEntity record);
 

@@ -1,42 +1,41 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class VoteJoinEntity {
-    private BigDecimal id;
+    private Long id;
 
-    private BigDecimal voteId;
+    private Long voteId;
 
-    private BigDecimal userId;
+    private Long userId;
 
     private Date createDate;
 
     private Date updateDate;
 
-    private Short status;
+    private Byte status;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getVoteId() {
+    public Long getVoteId() {
         return voteId;
     }
 
-    public void setVoteId(BigDecimal voteId) {
+    public void setVoteId(Long voteId) {
         this.voteId = voteId;
     }
 
-    public BigDecimal getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(BigDecimal userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -56,11 +55,11 @@ public class VoteJoinEntity {
         this.updateDate = updateDate;
     }
 
-    public Short getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 }

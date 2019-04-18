@@ -1,12 +1,13 @@
 server:
   port: 80
+  context-path: /
 
 spring:
   application:
     name: wtx
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://182.254.234.233:3306/wtx_cloud?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://182.254.234.233:3306/wtx_cloud?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource

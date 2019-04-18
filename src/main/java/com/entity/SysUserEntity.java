@@ -1,10 +1,9 @@
 package com.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class SysUserEntity {
-    private BigDecimal id;
+    private Long id;
 
     private String wxName;
 
@@ -14,7 +13,7 @@ public class SysUserEntity {
 
     private String mobile;
 
-    private Short status;
+    private Byte status;
 
     private Date createTime;
 
@@ -22,11 +21,11 @@ public class SysUserEntity {
 
     private Date updateTime;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,11 +61,11 @@ public class SysUserEntity {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public Short getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

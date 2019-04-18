@@ -2,33 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.CustomDao">
   <resultMap id="BaseResultMap" type="com.entity.CustomEntity">
-    <id column="id" jdbcType="DECIMAL" property="id" />
-    <result column="user_id" jdbcType="DECIMAL" property="userId" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="titile" jdbcType="VARCHAR" property="titile" />
     <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="status" jdbcType="DECIMAL" property="status" />
+    <result column="status" jdbcType="TINYINT" property="status" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
   </resultMap>
   <sql id="Base_Column_List">
     id, user_id, titile, content, status, create_date, update_date
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_custom
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_custom
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.entity.CustomEntity">
     insert into t_custom (id, user_id, titile, 
       content, status, create_date, 
       update_date)
-    values (#{id,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{titile,jdbcType=VARCHAR}, 
-      #{content,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{titile,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.CustomEntity">
@@ -58,10 +58,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=DECIMAL},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="titile != null">
         #{titile,jdbcType=VARCHAR},
@@ -70,7 +70,7 @@
         #{content,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        #{status,jdbcType=DECIMAL},
+        #{status,jdbcType=TINYINT},
       </if>
       <if test="createDate != null">
         #{createDate,jdbcType=TIMESTAMP},
@@ -84,7 +84,7 @@
     update t_custom
     <set>
       <if test="userId != null">
-        user_id = #{userId,jdbcType=DECIMAL},
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="titile != null">
         titile = #{titile,jdbcType=VARCHAR},
@@ -93,7 +93,7 @@
         content = #{content,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=DECIMAL},
+        status = #{status,jdbcType=TINYINT},
       </if>
       <if test="createDate != null">
         create_date = #{createDate,jdbcType=TIMESTAMP},
@@ -102,16 +102,16 @@
         update_date = #{updateDate,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.CustomEntity">
     update t_custom
-    set user_id = #{userId,jdbcType=DECIMAL},
+    set user_id = #{userId,jdbcType=BIGINT},
       titile = #{titile,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
-      status = #{status,jdbcType=DECIMAL},
+      status = #{status,jdbcType=TINYINT},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       update_date = #{updateDate,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

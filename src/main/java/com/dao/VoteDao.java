@@ -1,16 +1,15 @@
 package com.dao;
 
 import com.entity.VoteEntity;
-import java.math.BigDecimal;
 
 public interface VoteDao {
-    int deleteByPrimaryKey(BigDecimal id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(VoteEntity record);
 
     int insertSelective(VoteEntity record);
 
-    VoteEntity selectByPrimaryKey(BigDecimal id);
+    VoteEntity selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(VoteEntity record);
 

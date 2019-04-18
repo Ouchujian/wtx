@@ -1,9 +1,7 @@
 package com.entity;
 
-import java.math.BigDecimal;
-
 public class SysConfigEntity {
-    private BigDecimal id;
+    private Long id;
 
     private String key;
 
@@ -11,11 +9,11 @@ public class SysConfigEntity {
 
     private String remark;
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

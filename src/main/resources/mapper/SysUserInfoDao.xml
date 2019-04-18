@@ -2,30 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.SysUserInfoDao">
   <resultMap id="BaseResultMap" type="com.entity.SysUserInfoEntity">
-    <id column="id" jdbcType="DECIMAL" property="id" />
-    <result column="user_id" jdbcType="DECIMAL" property="userId" />
-    <result column="sex" jdbcType="DECIMAL" property="sex" />
-    <result column="age" jdbcType="DECIMAL" property="age" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="sex" jdbcType="BIT" property="sex" />
+    <result column="age" jdbcType="TINYINT" property="age" />
     <result column="hobby" jdbcType="VARCHAR" property="hobby" />
   </resultMap>
   <sql id="Base_Column_List">
     id, user_id, sex, age, hobby
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sys_user_info
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from sys_user_info
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.entity.SysUserInfoEntity">
-    insert into sys_user_info (id, user_id, sex, 
-      age, hobby)
-    values (#{id,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{sex,jdbcType=DECIMAL}, 
-      #{age,jdbcType=DECIMAL}, #{hobby,jdbcType=VARCHAR})
+    insert into sys_user_info (id, user_id, sex, age, 
+      hobby)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{sex,jdbcType=BIT}, #{age,jdbcType=TINYINT}, 
+      #{hobby,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.SysUserInfoEntity">
     insert into sys_user_info
@@ -48,16 +48,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=DECIMAL},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="sex != null">
-        #{sex,jdbcType=DECIMAL},
+        #{sex,jdbcType=BIT},
       </if>
       <if test="age != null">
-        #{age,jdbcType=DECIMAL},
+        #{age,jdbcType=TINYINT},
       </if>
       <if test="hobby != null">
         #{hobby,jdbcType=VARCHAR},
@@ -68,26 +68,26 @@
     update sys_user_info
     <set>
       <if test="userId != null">
-        user_id = #{userId,jdbcType=DECIMAL},
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="sex != null">
-        sex = #{sex,jdbcType=DECIMAL},
+        sex = #{sex,jdbcType=BIT},
       </if>
       <if test="age != null">
-        age = #{age,jdbcType=DECIMAL},
+        age = #{age,jdbcType=TINYINT},
       </if>
       <if test="hobby != null">
         hobby = #{hobby,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.SysUserInfoEntity">
     update sys_user_info
-    set user_id = #{userId,jdbcType=DECIMAL},
-      sex = #{sex,jdbcType=DECIMAL},
-      age = #{age,jdbcType=DECIMAL},
+    set user_id = #{userId,jdbcType=BIGINT},
+      sex = #{sex,jdbcType=BIT},
+      age = #{age,jdbcType=TINYINT},
       hobby = #{hobby,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

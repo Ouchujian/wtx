@@ -2,34 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.CustomJoinDao">
   <resultMap id="BaseResultMap" type="com.entity.CustomJoinEntity">
-    <id column="id" jdbcType="DECIMAL" property="id" />
-    <result column="user_id" jdbcType="DECIMAL" property="userId" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
-    <result column="custom_id" jdbcType="DECIMAL" property="customId" />
-    <result column="role_id" jdbcType="DECIMAL" property="roleId" />
+    <result column="custom_id" jdbcType="BIGINT" property="customId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, user_id, content, create_date, update_date, custom_id, role_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_custom_join
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_custom_join
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.entity.CustomJoinEntity">
     insert into t_custom_join (id, user_id, content, 
       create_date, update_date, custom_id, 
       role_id)
-    values (#{id,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{content,jdbcType=VARCHAR}, 
-      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{customId,jdbcType=DECIMAL}, 
-      #{roleId,jdbcType=DECIMAL})
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{customId,jdbcType=BIGINT}, 
+      #{roleId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.entity.CustomJoinEntity">
     insert into t_custom_join
@@ -58,10 +58,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=DECIMAL},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
@@ -73,10 +73,10 @@
         #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="customId != null">
-        #{customId,jdbcType=DECIMAL},
+        #{customId,jdbcType=BIGINT},
       </if>
       <if test="roleId != null">
-        #{roleId,jdbcType=DECIMAL},
+        #{roleId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -84,7 +84,7 @@
     update t_custom_join
     <set>
       <if test="userId != null">
-        user_id = #{userId,jdbcType=DECIMAL},
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
@@ -96,22 +96,22 @@
         update_date = #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="customId != null">
-        custom_id = #{customId,jdbcType=DECIMAL},
+        custom_id = #{customId,jdbcType=BIGINT},
       </if>
       <if test="roleId != null">
-        role_id = #{roleId,jdbcType=DECIMAL},
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
     </set>
-    where id = #{id,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.entity.CustomJoinEntity">
     update t_custom_join
-    set user_id = #{userId,jdbcType=DECIMAL},
+    set user_id = #{userId,jdbcType=BIGINT},
       content = #{content,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       update_date = #{updateDate,jdbcType=TIMESTAMP},
-      custom_id = #{customId,jdbcType=DECIMAL},
-      role_id = #{roleId,jdbcType=DECIMAL}
-    where id = #{id,jdbcType=DECIMAL}
+      custom_id = #{customId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
