@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserJoinInfoDao">
+	<select id="queryList" resultType="com.entity.UserJoinInfoEntity">
+		select * from t_user_join_info a
+		where
+		1 =1
+		<if test="userId != null">
+			and a.user_id = #{userId}
+		</if> 
+	</select>
+	
+	   <select id="queryTotal" resultType="int">
+        select count(1) from t_user_join_info a
+        where
+        1 =1
+        <if test="userId != null">
+            and a.user_id = #{userId}
+        </if> 
+    </select>
+
+	<insert id="save">
+		insert into t_user_join_info (
+		user_id,type,topic,topic_name,target_date
+		) value
+		(#{userId},#{type},#{topic},#{topicName},#{targetDate})
+	</insert>
+
+	<update id="update">
+		update t_user_join_info
+		<set>
+			<if test="userId != null">
+				user_id = #{userId},
+			</if>
+			<if test="type != null">
+				type = #{type},
+			</if>
+			<if test="topic != null">
+				topic = #{topic},
+			</if>
+			<if test="topicName != null">
+				topic_name = #{topicName},
+			</if>
+		</set>
+		where
+		<if test="id != null">
+			id = #{id}
+		</if>
+		<if test="topic != null">
+			topic = #{topic}
+		</if>
+	</update>
+</mapper>

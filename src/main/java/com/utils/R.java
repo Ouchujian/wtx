@@ -9,28 +9,28 @@ public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 
 	public R() {
-		this.put((String) "code", 0);
-		this.put((String) "msg", "success");
+		this.put("code", 0);
+		this.put("msg", "success");
 	}
 
 	public static R error() {
 		return error(500, "未知异常，请联系管理员");
 	}
 
-	public static R error(String msg) {
+	public static R error(Object msg) {
 		return error(500, msg);
 	}
 
-	public static R error(int code, String msg) {
+	public static R error(int code, Object msg) {
 		R r = new R();
-		r.put((String) "code", code);
-		r.put((String) "msg", msg);
+		r.put("code", code);
+		r.put("msg", msg);
 		return r;
 	}
 
-	public static R ok(String msg) {
+	public static R ok(Object msg) {
 		R r = new R();
-		r.put((String) "msg", msg);
+		r.put("msg", msg);
 		return r;
 	}
 
@@ -47,6 +47,5 @@ public class R extends HashMap<String, Object> {
 	public R put(String key, Object value) {
 		super.put(key, JSON.toJSON(value));
 		return this;
-	} 
+	}
 }
-

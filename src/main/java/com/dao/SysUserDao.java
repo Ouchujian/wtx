@@ -10,6 +10,8 @@ public interface SysUserDao {
     int insertSelective(SysUserEntity record);
 
     SysUserEntity selectByPrimaryKey(Long id);
+    
+    SysUserEntity selectByWxid(String wxId);
 
     int updateByPrimaryKeySelective(SysUserEntity record);
 
