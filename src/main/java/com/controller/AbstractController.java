@@ -18,9 +18,22 @@ public abstract class AbstractController {
 	@Autowired
 	SysUserService sysUserService;
 	
+	/**
+	 * 获取用户
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	SysUserEntity getUserInfo(HttpServletRequest request,HttpServletResponse response) {
 		String wxId = request.getParameter("wxId");
-		return sysUserService.selectByWxid(wxId);
+		String userId = request.getParameter("userId");
+		SysUserEntity user = null;
+		if(StringUtils.isNoneBlank(wxId)) {
+			user = sysUserService.selectByWxid(wxId);
+		}else if(StringUtils.isNoneBlank(userId)) {
+			user = sysUserService.selectByPrimaryKey(Long.valueOf(userId));
+		}
+		return user;
 	}
 	
 	public Map<String,Object> getParams(HttpServletRequest req){

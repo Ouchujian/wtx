@@ -18,4 +18,10 @@ public class SysUserServiceImpl implements SysUserService {
 		// TODO Auto-generated method stub
 		return sysUserDao.selectByWxid(wxId);
 	}
+
+	@Override
+	public SysUserEntity selectByPrimaryKey(Long id) {
+		// TODO Auto-generated method stub
+		return sysUserDao.selectByPrimaryKey(id);
+	}
 }
