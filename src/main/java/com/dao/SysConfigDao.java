@@ -1,5 +1,7 @@
 package com.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.entity.SysConfigEntity;
 
 public interface SysConfigDao {
@@ -10,6 +12,8 @@ public interface SysConfigDao {
     int insertSelective(SysConfigEntity record);
 
     SysConfigEntity selectByPrimaryKey(Long id);
+    
+    SysConfigEntity selectByKey(@Param("key")String key);
 
     int updateByPrimaryKeySelective(SysConfigEntity record);
 
