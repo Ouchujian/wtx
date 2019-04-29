@@ -33,8 +33,9 @@ public class UserJoinInfoController extends AbstractController{
 	
     @ApiOperation(value = "根据wxId/userId查询用户动态", notes = "根据wxId/userId查询用户动态")
     @ApiImplicitParams({@ApiImplicitParam(name = "wxId", value = "wxId", dataType = "String", paramType = "query"),
-		@ApiImplicitParam(name = "userId", value = "userId", dataType = "String", paramType = "query")})	@RequestMapping(value = "/queryList", method = RequestMethod.GET)
-	public R queryList(HttpServletRequest request,HttpServletResponse response){
+		@ApiImplicitParam(name = "userId", value = "userId", dataType = "String", paramType = "query")})
+	@RequestMapping(value = "/queryList", method = RequestMethod.GET)
+    public R queryList(HttpServletRequest request,HttpServletResponse response){
 		SysUserEntity user = getUserInfo(request, response);
 		if(user == null) {
 			return R.error("用户不存在");
