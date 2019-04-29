@@ -15,11 +15,11 @@ public class SysUserEntity {
 
     private Byte status;
 
-    private Date createTime;
+    private Date createDate;
 
-    private Date lastLoginTime;
+    private Date lastLoginDate;
 
-    private Date updateTime;
+    private Date updateDate;
 
     public Long getId() {
         return id;
@@ -69,27 +69,27 @@ public class SysUserEntity {
         this.status = status;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+	public Date getCreateDate() {
+		return createDate;
+	}
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
 
-    public Date getLastLoginTime() {
-        return lastLoginTime;
-    }
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
 
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
+	}
 
-    public Date getUpdateTime() {
-        return updateTime;
-    }
+	public Date getUpdateDate() {
+		return updateDate;
+	}
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
 }
