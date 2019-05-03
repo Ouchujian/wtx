@@ -21,6 +21,12 @@ public class UserJoinInfoServiceImpl implements UserJoinInfoService {
 		// TODO Auto-generated method stub
 		return userJoinInfoDao.queryList(params);
 	}
+	
+	@Override
+	public int queryTotal(Map<String, Object> params) {
+		// TODO Auto-generated method stub
+		return userJoinInfoDao.queryTotal(params);
+	}
 
 	@Override
 	public void save(UserJoinInfoEntity entity) {
@@ -34,9 +40,9 @@ public class UserJoinInfoServiceImpl implements UserJoinInfoService {
 	}
 
 	@Override
-	public int queryTotal(Map<String, Object> params) {
+	public int delete(Long id) {
 		// TODO Auto-generated method stub
-		return userJoinInfoDao.queryTotal(params);
+		return userJoinInfoDao.delete(id);
 	}
 
 }

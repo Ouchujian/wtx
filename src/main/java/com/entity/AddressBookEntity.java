@@ -15,7 +15,7 @@ public class AddressBookEntity {
 
     private Date updateDate;
 
-    private Byte status;
+    private Integer status;
 
     private String password;
 
@@ -67,11 +67,11 @@ public class AddressBookEntity {
         this.updateDate = updateDate;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

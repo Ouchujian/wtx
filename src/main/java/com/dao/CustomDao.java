@@ -5,13 +5,13 @@ import com.entity.CustomEntity;
 public interface CustomDao {
     int deleteByPrimaryKey(Long id);
 
-    int insert(CustomEntity record);
+    int insert(CustomEntity entity);
 
-    int insertSelective(CustomEntity record);
+    int insertSelective(CustomEntity entity);
 
     CustomEntity selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(CustomEntity record);
+    int updateByPrimaryKeySelective(CustomEntity entity);
 
-    int updateByPrimaryKey(CustomEntity record);
+    int updateByPrimaryKey(CustomEntity entity);
 }

@@ -24,4 +24,16 @@ public class SysUserServiceImpl implements SysUserService {
 		// TODO Auto-generated method stub
 		return sysUserDao.selectByPrimaryKey(id);
 	}
+
+	@Override
+	public int save(SysUserEntity entity) {
+		// TODO Auto-generated method stub
+		return sysUserDao.insert(entity);
+	}
+
+	@Override
+	public int update(SysUserEntity entity) {
+		// TODO Auto-generated method stub
+		return sysUserDao.updateByPrimaryKey(entity);
+	}
 }

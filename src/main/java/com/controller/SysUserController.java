@@ -28,18 +28,27 @@ public class SysUserController extends AbstractController{
     @ApiOperation(value = "根据wxId/userId查询用户", notes = "根据wxId/userId查询用户")
     @ApiImplicitParams({@ApiImplicitParam(name = "wxId", value = "wxId", dataType = "String", paramType = "query"),
     		@ApiImplicitParam(name = "userId", value = "userId", dataType = "String", paramType = "query")})
-	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/getUser", method = RequestMethod.POST)
 	public R getUser(HttpServletRequest request,HttpServletResponse response){
 		SysUserEntity user = getUserInfo(request, response);
 		return R.ok().put("data", user);
 	}
     
-    @ApiOperation(value = "根据wxId/userId查询用户", notes = "根据wxId/userId查询用户")
-    @ApiImplicitParams({@ApiImplicitParam(name = "wxId", value = "wxId", dataType = "String", paramType = "query"),
-    		@ApiImplicitParam(name = "userId", value = "userId", dataType = "String", paramType = "query")})
-	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
-	public R getUser(@RequestBody SysUserEntity entity,HttpServletResponse response){
- 
+    @ApiOperation(value = "新增修改用户", notes = "新增修改用户")
+    @ApiImplicitParams({})
+	@RequestMapping(value = "/saveOrUpdate", method = RequestMethod.POST)
+	public R saveOrUpdate(@RequestBody SysUserEntity entity,HttpServletResponse response){
+    	if(entity == null ) {
+    		return R.error();
+    	}
+    	if(entity.getWxId() == null) {
+    		return R.error();
+    	}
+    	if(entity.getId() == null) {
+    		sysUserService.save(entity);
+    	}else {
+    		sysUserService.update(entity);
+    	}
 		return R.ok();
 	}
 }

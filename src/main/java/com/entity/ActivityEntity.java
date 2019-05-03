@@ -2,6 +2,10 @@ package com.entity;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class ActivityEntity {
     private Long id;
 
@@ -12,10 +16,12 @@ public class ActivityEntity {
     private String content;
 
     private String site;
-
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date targetDate;
 
-    private Byte status;
+    private Integer status;
 
     private Date endDate;
 
@@ -73,11 +79,11 @@ public class ActivityEntity {
         this.targetDate = targetDate;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

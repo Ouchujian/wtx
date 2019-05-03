@@ -5,13 +5,13 @@ import com.entity.AddressBookEntity;
 public interface AddressBookDao {
     int deleteByPrimaryKey(Long id);
 
-    int insert(AddressBookEntity record);
+    int insert(AddressBookEntity entity);
 
-    int insertSelective(AddressBookEntity record);
+    int insertSelective(AddressBookEntity entity);
 
     AddressBookEntity selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(AddressBookEntity record);
+    int updateByPrimaryKeySelective(AddressBookEntity entity);
 
-    int updateByPrimaryKey(AddressBookEntity record);
+    int updateByPrimaryKey(AddressBookEntity entity);
 }

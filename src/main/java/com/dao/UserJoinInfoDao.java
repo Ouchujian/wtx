@@ -10,4 +10,5 @@ public interface UserJoinInfoDao {
 	int queryTotal(Map<String,Object> params);
 	void save(UserJoinInfoEntity entity);
 	int update(UserJoinInfoEntity entity);
+	int delete(Long id);
 }

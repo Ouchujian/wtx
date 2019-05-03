@@ -3,14 +3,18 @@ package com.entity;
 import java.util.Date;
 
 public class UserJoinInfoEntity {
+	
 	private Long id;
 	private Long userId;
 	private Integer type;
-	private String topic;
+	private String topic; 
 	private String topicName;
 	private Date createDate;
 	private Date updateDate;
-	private Date targetDate;
+	private String userName;
+	private String mobile;
+	private String remark;
+	
 	public Long getId() {
 		return id;
 	}
@@ -53,10 +57,24 @@ public class UserJoinInfoEntity {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
-	public Date getTargetDate() {
-		return targetDate;
+	public String getUserName() {
+		return userName;
 	}
-	public void setTargetDate(Date targetDate) {
-		this.targetDate = targetDate;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	
+	 
 }

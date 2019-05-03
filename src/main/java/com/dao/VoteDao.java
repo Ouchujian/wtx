@@ -5,13 +5,13 @@ import com.entity.VoteEntity;
 public interface VoteDao {
     int deleteByPrimaryKey(Long id);
 
-    int insert(VoteEntity record);
+    int insert(VoteEntity entity);
 
-    int insertSelective(VoteEntity record);
+    int insertSelective(VoteEntity entity);
 
     VoteEntity selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(VoteEntity record);
+    int updateByPrimaryKeySelective(VoteEntity entity);
 
-    int updateByPrimaryKey(VoteEntity record);
+    int updateByPrimaryKey(VoteEntity entity);
 }
