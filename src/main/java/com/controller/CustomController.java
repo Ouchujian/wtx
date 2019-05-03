@@ -48,6 +48,12 @@ public class CustomController extends AbstractController {
 	@RequestMapping(value = "/saveOrUpdate", method = RequestMethod.POST)
 	public R saveOrUpdate(@RequestBody CustomEntity entity, HttpServletRequest request,
 			HttpServletResponse response) {
+		SysUserEntity user = getUserInfo(request, response);
+
+		if (user == null || !user.getId().equals(entity.getUserId())) {
+			return R.error("userId不正确");
+		}
+		
 		if (entity.getId() == null) {
 			customService.save(entity);
 		} else {

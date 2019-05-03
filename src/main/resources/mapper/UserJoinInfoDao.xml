@@ -15,6 +15,9 @@
 		<if test="type">
 			and a.type = #{type}
 		</if>
+		<if test="offset != null and limit != null">
+			limit #{offset},#{limit}
+		</if>
 	</select>
 
 	<select id="queryTotal" resultType="int">
@@ -29,6 +32,9 @@
 		</if>
 		<if test="type">
 			and a.type = #{type}
+		</if>
+		<if test="offset != null and limit != null">
+			limit #{offset},#{limit}
 		</if>
 	</select>
 

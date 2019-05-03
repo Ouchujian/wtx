@@ -50,6 +50,11 @@ public class VoteController extends AbstractController {
 	@RequestMapping(value = "/saveOrUpdate", method = RequestMethod.POST)
 	public R saveOrUpdate(@RequestBody VoteEntity entity, HttpServletRequest request, HttpServletResponse response) {
 		SysUserEntity user = getUserInfo(request, response);
+
+		if (user == null || !user.getId().equals(entity.getUserId())) {
+			return R.error("userId不正确");
+		}
+		
 		if (entity.getId() == null) {
 			voteService.save(entity);
 		} else {

@@ -2,6 +2,10 @@ package com.entity;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class VoteEntity {
     private Long id;
 
@@ -19,6 +23,8 @@ public class VoteEntity {
 
     private Date updateDate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endDate;
 
     public Long getId() {

@@ -46,13 +46,13 @@ public abstract class AbstractController {
 			map.put(name, value);
 		}
 		
-		 String page = req.getParameter("page");
-		 String limit = req.getParameter("limit");
-		 if(StringUtils.isNotBlank(page) && StringUtils.isNotBlank(limit)){
-			 int offset = (Integer.valueOf(page) - 1) * Integer.valueOf(limit);
+		 String currPage = req.getParameter("currPage");
+		 String pageSize = req.getParameter("pageSize");
+		 if(StringUtils.isNotBlank(currPage) && StringUtils.isNotBlank(pageSize)){
+			 int offset = (Integer.valueOf(currPage) - 1) * Integer.valueOf(pageSize);
 			 map.put("offset", offset);
-			 map.put("page", Integer.valueOf(page));
-			 map.put("limit", Integer.valueOf(limit));
+			 map.put("page", Integer.valueOf(currPage));
+			 map.put("limit", Integer.valueOf(pageSize));
 		 }
 		 
 		return map;

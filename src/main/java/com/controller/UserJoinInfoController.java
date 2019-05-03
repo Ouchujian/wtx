@@ -34,24 +34,17 @@ public class UserJoinInfoController extends AbstractController {
 
 	@ApiOperation(value = "根据userId查询用户动态", notes = "根据userId查询用户动态")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "userId", value = "userId", dataType = "String",required = true, paramType = "query"),
-			@ApiImplicitParam(name = "topic", value = "类型Id", dataType = "Integer",required = true, paramType = "query"),
-			@ApiImplicitParam(name = "type", value = "类型(10:活动,20:投票,30:通讯录,40:自定义)", dataType = "Integer",required = true, paramType = "query"),
-			@ApiImplicitParam(name = "limit", value = "行数", dataType = "Integer",required = true, paramType = "query"),
-			@ApiImplicitParam(name = "page", value = "页码", dataType = "Integer",required = true, paramType = "query") })
+			@ApiImplicitParam(name = "userId", value = "userId", dataType = "String", paramType = "query"),
+			@ApiImplicitParam(name = "topic", value = "类型Id", dataType = "Integer", paramType = "query"),
+			@ApiImplicitParam(name = "type", value = "类型(10:活动,20:投票,30:通讯录,40:自定义)", dataType = "Integer", paramType = "query"),
+			@ApiImplicitParam(name = "pageSize", value = "行数", dataType = "Integer", paramType = "query"),
+			@ApiImplicitParam(name = "currPage", value = "页码", dataType = "Integer", paramType = "query") })
 	@RequestMapping(value = "/queryList", method = RequestMethod.GET)
 	public R queryList(HttpServletRequest request, HttpServletResponse response) {
-		String userId = request.getParameter("userId");
-		String topic = request.getParameter("topic");
-		String type = request.getParameter("type");
-		Map<String, Object> map = getParams(request);
-		Map<String, Object> params = Maps.newHashMap();
-		params.put("userId", userId);
-		params.put("topic", topic);
-		params.put("type", type);
+		Map<String, Object> params = getParams(request);
 		List<UserJoinInfoEntity> dataList = userJoinInfoService.queryList(params);
 		int total = userJoinInfoService.queryTotal(params);
-		return R.ok().put("page", new PageUtil(dataList, total, map));
+		return R.ok().put("page", new PageUtil(dataList, total, params));
 	}
 
 	@ApiOperation(value = "保存/修改用户动态", notes = "保存/修改用户动态")

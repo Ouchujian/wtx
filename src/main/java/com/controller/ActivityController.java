@@ -46,6 +46,7 @@ public class ActivityController  extends AbstractController{
     
     @ApiOperation(value = "新增/修改活动", notes = "新增/修改活动")
     @ApiImplicitParams({
+    	@ApiImplicitParam(name = "wxId", value = "wxId", dataType = "String", paramType = "query"),
     	@ApiImplicitParam(name = "id", value = "id", dataType = "Long", paramType = "query"),
 		@ApiImplicitParam(name = "userId", value = "userId", dataType = "Long", paramType = "query"),
 		@ApiImplicitParam(name = "title", value = "title", dataType = "String", paramType = "query"),
@@ -60,6 +61,11 @@ public class ActivityController  extends AbstractController{
 	public R saveOrUpdate(@RequestBody ActivityEntity entity, HttpServletRequest request,HttpServletResponse response){
 		SysUserEntity user = getUserInfo(request, response);
 		String voteId = request.getParameter("voteId");
+
+		if(user == null || !user.getId().equals(entity.getUserId())) {
+			return R.error("userId不正确");
+		}
+		
 		if(entity.getId() == null) {
 			//投票活动
 			if(StringUtils.isNoneBlank(voteId)) {
