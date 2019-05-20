@@ -23,8 +23,6 @@ public class VoteEntity {
 
     private Date updateDate;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endDate;
 
     public Long getId() {

@@ -2,11 +2,12 @@ package com.entity;
 
 import java.util.Date;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class ActivityEntity {
+public class ActivityEntity{
     private Long id;
 
     private Long userId;
@@ -17,8 +18,6 @@ public class ActivityEntity {
 
     private String site;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date targetDate;
 
     private Integer status;
