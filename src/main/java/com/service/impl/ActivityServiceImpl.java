@@ -22,7 +22,7 @@ public class ActivityServiceImpl implements ActivityService {
 	@Override
 	public int update(ActivityEntity entity) {
 		// TODO Auto-generated method stub
-		return activityDao.update(entity);
+		return activityDao.updateById(entity);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class ActivityServiceImpl implements ActivityService {
 	@Override
 	public ActivityEntity queryObject(Long id) {
 		// TODO Auto-generated method stub
-		return activityDao.queryObject(id);
+		return activityDao.selectById(id);
 	}
 
 }

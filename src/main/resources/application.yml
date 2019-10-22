@@ -22,8 +22,17 @@ spring:
       filters: stat,config
 
 #公共配置与profiles选择无关
-mybatis:
-  typeAliasesPackage: com.pojo,com.entity
-  configuration:
-    map-underscore-to-camel-case: true
-  mapperLocations: classpath:mapper/*.xml
+#mybatis:
+#  typeAliasesPackage: com.pojo,com.entity
+#  configuration:
+#    map-underscore-to-camel-case: true
+#  mapperLocations: classpath:mapper/*.xml
+
+mybatis-plus:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.pojo,com.entity
+  global-config:
+    id-type: 0
+    field-strategy: 2
+    capital-mode: true
+    refresh-mapper: true  

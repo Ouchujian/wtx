@@ -61,7 +61,7 @@ public class ActivityController  extends AbstractController{
 	public R saveOrUpdate(@RequestBody ActivityEntity entity, HttpServletRequest request,HttpServletResponse response){
 		SysUserEntity user = getUserInfo(request, response);
 		String voteId = request.getParameter("voteId");
-
+		
 		if(user == null || !user.getId().equals(entity.getUserId())) {
 			return R.error("userId不正确");
 		}

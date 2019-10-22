@@ -5,12 +5,11 @@ import java.util.Map;
 
 import com.entity.ActivityEntity;
 
-public interface ActivityDao {
+public interface ActivityDao extends BaseDao<ActivityEntity>{
+	
     int delete(Long id);
 
     Long save(ActivityEntity entity);
-    
-    int update(ActivityEntity entity);
     
     List<ActivityEntity> queryList(Map<String,Object> params);
     
