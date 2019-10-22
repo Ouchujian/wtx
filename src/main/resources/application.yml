@@ -27,7 +27,10 @@ spring:
 #  configuration:
 #    map-underscore-to-camel-case: true
 #  mapperLocations: classpath:mapper/*.xml
-
+wx: 
+    appid: wx04fe15f9b3b2c504
+    secret: c0b8ed48b201cdc801be3db178b1f15f
+    
 mybatis-plus:
   mapper-locations: mapper/*.xml
   type-aliases-package: com.pojo,com.entity

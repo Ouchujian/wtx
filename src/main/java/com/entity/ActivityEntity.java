@@ -2,10 +2,7 @@ package com.entity;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 import lombok.Getter;
@@ -16,7 +13,6 @@ import lombok.Setter;
 @Setter
 @TableName("t_activity")
 public class ActivityEntity {
-	
     private Long id;
 
     private Long userId;
@@ -27,8 +23,6 @@ public class ActivityEntity {
 
     private String site;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date targetDate;
 
     private Integer status;
