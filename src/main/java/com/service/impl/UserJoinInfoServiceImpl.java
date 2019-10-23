@@ -1,48 +1,20 @@
 package com.service.impl;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.entity.UserJoinInfo;
+import com.mapper.UserJoinInfoMapper;
+import com.service.IUserJoinInfoService;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import com.dao.UserJoinInfoDao;
-import com.entity.UserJoinInfoEntity;
-import com.service.UserJoinInfoService;
-
-@Service("userJoinInfoService")
-public class UserJoinInfoServiceImpl implements UserJoinInfoService {
-	
-	@Autowired
-	UserJoinInfoDao userJoinInfoDao;
-
-	@Override
-	public List<UserJoinInfoEntity> queryList(Map<String, Object> params) {
-		// TODO Auto-generated method stub
-		return userJoinInfoDao.queryList(params);
-	}
-	
-	@Override
-	public int queryTotal(Map<String, Object> params) {
-		// TODO Auto-generated method stub
-		return userJoinInfoDao.queryTotal(params);
-	}
-
-	@Override
-	public void save(UserJoinInfoEntity entity) {
-		userJoinInfoDao.save(entity);
-	}
-
-	@Override
-	public int update(UserJoinInfoEntity entity) {
-		// TODO Auto-generated method stub
-		return userJoinInfoDao.update(entity);
-	}
-
-	@Override
-	public int delete(Long id) {
-		// TODO Auto-generated method stub
-		return userJoinInfoDao.delete(id);
-	}
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author ouchujian
+ * @since 2019-10-23
+ */
+@Service
+public class UserJoinInfoServiceImpl extends ServiceImpl<UserJoinInfoMapper, UserJoinInfo> implements IUserJoinInfoService {
 
 }

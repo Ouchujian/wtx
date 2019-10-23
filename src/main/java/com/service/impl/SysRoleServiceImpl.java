@@ -1,8 +1,8 @@
 package com.service.impl;
 
-import com.entity.Custom;
-import com.mapper.CustomMapper;
-import com.service.ICustomService;
+import com.entity.SysRole;
+import com.mapper.SysRoleMapper;
+import com.service.ISysRoleService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> implements ICustomService {
+public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements ISysRoleService {
 
 }

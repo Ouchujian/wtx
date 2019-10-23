@@ -1,40 +1,20 @@
 package com.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.entity.Vote;
+import com.mapper.VoteMapper;
+import com.service.IVoteService;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import com.dao.VoteDao;
-import com.entity.VoteEntity;
-import com.service.VoteService;
-
-@Service("voteService")
-public class VoteServiceImpl implements VoteService {
-	
-	@Autowired
-	VoteDao voteDao;
-
-	@Override
-	public int save(VoteEntity entity) {
-		// TODO Auto-generated method stub
-		return voteDao.insertSelective(entity);
-	}
-
-	@Override
-	public int update(VoteEntity entity) {
-		// TODO Auto-generated method stub
-		return voteDao.updateByPrimaryKey(entity);
-	}
-
-	@Override
-	public int delete(Long id) {
-		// TODO Auto-generated method stub
-		return voteDao.deleteByPrimaryKey(id);
-	}
-
-	@Override
-	public VoteEntity queryObject(Long id) {
-		// TODO Auto-generated method stub
-		return voteDao.selectByPrimaryKey(id);
-	}
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author ouchujian
+ * @since 2019-10-23
+ */
+@Service
+public class VoteServiceImpl extends ServiceImpl<VoteMapper, Vote> implements IVoteService {
 
 }

@@ -1,39 +1,20 @@
 package com.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.entity.SysUser;
+import com.mapper.SysUserMapper;
+import com.service.ISysUserService;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import com.dao.SysUserDao;
-import com.entity.SysUserEntity;
-import com.service.SysUserService;
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author ouchujian
+ * @since 2019-10-23
+ */
+@Service
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
-@Service("sysUserService")
-public class SysUserServiceImpl implements SysUserService {
-
-	@Autowired
-	SysUserDao sysUserDao;
-
-	@Override
-	public SysUserEntity selectByWxid(String wxId) {
-		// TODO Auto-generated method stub
-		return sysUserDao.selectByWxid(wxId);
-	}
-
-	@Override
-	public SysUserEntity selectByPrimaryKey(Long id) {
-		// TODO Auto-generated method stub
-		return sysUserDao.selectByPrimaryKey(id);
-	}
-
-	@Override
-	public int save(SysUserEntity entity) {
-		// TODO Auto-generated method stub
-		return sysUserDao.insert(entity);
-	}
-
-	@Override
-	public int update(SysUserEntity entity) {
-		// TODO Auto-generated method stub
-		return sysUserDao.updateByPrimaryKey(entity);
-	}
 }
