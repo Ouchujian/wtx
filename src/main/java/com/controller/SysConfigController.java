@@ -1,4 +1,4 @@
-package com.web;
+package com.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-10-23
  */
 @RestController
-@RequestMapping("/activity")
-public class ActivityController {
+@RequestMapping("/sys-config")
+public class SysConfigController {
 
 }
