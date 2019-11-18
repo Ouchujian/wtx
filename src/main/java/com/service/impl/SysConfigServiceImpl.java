@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.SysConfig;
 import com.mapper.SysConfigMapper;
-import com.service.ISysConfigService;
+import com.service.SysConfigService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements ISysConfigService {
+public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements SysConfigService {
 
 }

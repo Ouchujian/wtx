@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.AddressBook;
 import com.mapper.AddressBookMapper;
-import com.service.IAddressBookService;
+import com.service.AddressBookService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class AddressBookServiceImpl extends ServiceImpl<AddressBookMapper, AddressBook> implements IAddressBookService {
+public class AddressBookServiceImpl extends ServiceImpl<AddressBookMapper, AddressBook> implements AddressBookService {
 
 }

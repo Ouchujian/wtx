@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.Vote;
 import com.mapper.VoteMapper;
-import com.service.IVoteService;
+import com.service.VoteService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class VoteServiceImpl extends ServiceImpl<VoteMapper, Vote> implements IVoteService {
+public class VoteServiceImpl extends ServiceImpl<VoteMapper, Vote> implements VoteService {
 
 }

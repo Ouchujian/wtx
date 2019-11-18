@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.Activity;
+import com.entity.SysUser;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author ouchujian
  * @since 2019-10-23
  */
-public interface IActivityService extends IService<Activity> {
+public interface SysUserService extends IService<SysUser> {
 
 }

@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.Custom;
 import com.mapper.CustomMapper;
-import com.service.ICustomService;
+import com.service.CustomService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> implements ICustomService {
+public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> implements CustomService {
 
 }

@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.Activity;
 import com.mapper.ActivityMapper;
-import com.service.IActivityService;
+import com.service.ActivityService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> implements IActivityService {
+public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> implements ActivityService {
 
 }

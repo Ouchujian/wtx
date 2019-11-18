@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.entity.UserJoinInfo;
 import com.mapper.UserJoinInfoMapper;
-import com.service.IUserJoinInfoService;
+import com.service.UserJoinInfoService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-23
  */
 @Service
-public class UserJoinInfoServiceImpl extends ServiceImpl<UserJoinInfoMapper, UserJoinInfo> implements IUserJoinInfoService {
+public class UserJoinInfoServiceImpl extends ServiceImpl<UserJoinInfoMapper, UserJoinInfo> implements UserJoinInfoService {
 
 }

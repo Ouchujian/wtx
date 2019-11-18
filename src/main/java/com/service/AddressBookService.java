@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.VoteActivity;
+import com.entity.AddressBook;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author ouchujian
  * @since 2019-10-23
  */
-public interface IVoteActivityService extends IService<VoteActivity> {
+public interface AddressBookService extends IService<AddressBook> {
 
 }

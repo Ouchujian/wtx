@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.SysConfig;
+import com.entity.Activity;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author ouchujian
  * @since 2019-10-23
  */
-public interface ISysConfigService extends IService<SysConfig> {
+public interface ActivityService extends IService<Activity> {
 
 }

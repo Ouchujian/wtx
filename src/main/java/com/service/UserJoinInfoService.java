@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.SysRole;
+import com.entity.UserJoinInfo;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author ouchujian
  * @since 2019-10-23
  */
-public interface ISysRoleService extends IService<SysRole> {
+public interface UserJoinInfoService extends IService<UserJoinInfo> {
 
 }
